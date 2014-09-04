@@ -31,13 +31,20 @@ public class DatosPersonales {
         if(Edad >= 0){
             
             if(Edad < 12){
-                
                 System.out.println("\nEres un infante");
-                
             }
+            if((Edad >= 12) && (Edad < 18)){
+                System.out.println("\n Eres un adolescenete");
+            }
+            if((Edad >= 18) && (Edad < 65)){
+                System.out.println("\n Eres un adulto");
+            }
+            else{
+                System.out.println("\n Perteneces a la tercera edad, eres un anciano!! :D");
+            }                   
         }
         else{
-           
+         
             System.out.println("\nLa edad no es válida." + " La edad debe ser igual o mayor a 0");
         
         }
@@ -45,4 +52,3 @@ public class DatosPersonales {
     }
     
 }
-
