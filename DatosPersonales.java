@@ -13,9 +13,9 @@ public class DatosPersonales {
         
         System.out.printf("Escriba su nombre: ");
         Nombre = entrada.nextLine();
-        System.out.printf("Escriba su telÃ©fono: ");
+        System.out.printf("Escriba su teléfono: ");
         Tel = entrada.nextLine();
-        System.out.printf("Escriba su direcciÃ³n: ");
+        System.out.printf("Escriba su dirección: ");
         Direccion = entrada.nextLine();
         System.out.printf("Escriba su edad: ");
         Edad = entrada.nextInt();
@@ -23,11 +23,26 @@ public class DatosPersonales {
         Peso = entrada.nextDouble();
         
         System.out.printf("\nEl nombre es: %s", Nombre);
-        System.out.printf("\nEl telÃ©fono es: %s", Tel);
+        System.out.printf("\nEl teléfono es: %s", Tel);
         System.out.printf("\nLa direccion es: %s", Direccion);
         System.out.printf("\nLa edad es: %d", Edad);
         System.out.printf("\nEl peso es: %.2f", Peso);
-       
+        
+        if(Edad >= 0){
+            
+            if(Edad < 12){
+                
+                System.out.println("\nEres un infante");
+                
+            }
+        }
+        else{
+           
+            System.out.println("\nLa edad no es válida." + " La edad debe ser igual o mayor a 0");
+        
+        }
+      
     }
     
 }
+
