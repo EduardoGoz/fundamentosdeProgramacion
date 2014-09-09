@@ -13,11 +13,12 @@ public class CalculadoraAritmtica {
             System.out.print("\nResta          [2]");
             System.out.print("\nMultiplicación [3]");
             System.out.print("\nDivisión       [4]");
-            System.out.print("\nSalir          [5]\nOpcion: ");
+            System.out.print("\nMódulo         [5]");
+            System.out.print("\nSalir          [6]\nOpcion: ");
             
             opcion = entrada.nextInt();
             
-            if((opcion > 0) && (opcion < 6)){
+            if((opcion > 0) && (opcion < 7)){
                 if(opcion == 1){
                     System.out.printf("Teclea el primer número: ");
                     valor1 = entrada.nextInt();
@@ -61,9 +62,20 @@ public class CalculadoraAritmtica {
                     
                     System.out.printf("El resultado de la división es: %d", res);
                     
-                }
-                if(opcion == 5){
+                }if(opcion == 5){
+                    System.out.printf("Teclea el primer número: ");
+                    valor1 = entrada.nextInt();
+                    System.out.printf("\nTeclea el otro número: ");
+                    valor2 = entrada.nextInt();
                     
+                    res = valor1 % valor2;
+                    
+                    System.out.printf("El resultado del módulo es: %d", res);
+                    
+                }
+                
+                if(opcion == 6){
+                   System.out.println("¡Adiós! ¡Vuelve pronto!");
                 }
             }
             else{
