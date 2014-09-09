@@ -1,0 +1,74 @@
+package calculadoraaritmtica;
+import java.util.Scanner;
+public class CalculadoraAritmtica {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int opcion = 0;
+        int valor1 = 0;
+        int valor2 = 0;
+        int res = 0;
+        
+            System.out.print("Suma           [1]");
+            System.out.print("\nResta          [2]");
+            System.out.print("\nMultiplicación [3]");
+            System.out.print("\nDivisión       [4]");
+            System.out.print("\nSalir          [5]\nOpcion: ");
+            
+            opcion = entrada.nextInt();
+            
+            if((opcion > 0) && (opcion < 6)){
+                if(opcion == 1){
+                    System.out.printf("Teclea el primer número: ");
+                    valor1 = entrada.nextInt();
+                    System.out.printf("\nTeclea el otro número: ");
+                    valor2 = entrada.nextInt();
+                    
+                    res = valor1 + valor2;
+                    
+                    System.out.printf("El resultado de la suma es: %d", res);
+                    
+                }
+                if(opcion == 2){
+                    System.out.printf("Teclea el primer número: ");
+                    valor1 = entrada.nextInt();
+                    System.out.printf("\nTeclea el otro número: ");
+                    valor2 = entrada.nextInt();
+                    
+                    res = valor1 - valor2;
+                    
+                    System.out.printf("El resultado de la resta es: %d", res);
+                    
+                }
+                if(opcion == 3){
+                    System.out.printf("Teclea el primer número: ");
+                    valor1 = entrada.nextInt();
+                    System.out.printf("\nTeclea el otro número: ");
+                    valor2 = entrada.nextInt();
+                    
+                    res = valor1 * valor2;
+                    
+                    System.out.printf("El resultado de la multiplicación es: %d", res);
+                    
+                }
+                if(opcion == 4){
+                    System.out.printf("Teclea el primer número: ");
+                    valor1 = entrada.nextInt();
+                    System.out.printf("\nTeclea el otro número: ");
+                    valor2 = entrada.nextInt();
+                    
+                    res = valor1 / valor2;
+                    
+                    System.out.printf("El resultado de la división es: %d", res);
+                    
+                }
+                if(opcion == 5){
+                    
+                }
+            }
+            else{
+                System.out.print("No es una opción valida para el menú");
+            }
+    }
+    
+}
