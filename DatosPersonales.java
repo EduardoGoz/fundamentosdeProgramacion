@@ -36,11 +36,11 @@ public class DatosPersonales {
             if((Edad >= 12) && (Edad < 18)){
                 System.out.println("\n Eres un adolescenete");
             }
-            if((Edad >= 18) && (Edad < 65)){
+            if((Edad >=18) && (Edad < 65)){
                 System.out.println("\n Eres un adulto");
             }
-            else{
-                System.out.println("\n Perteneces a la tercera edad, eres un anciano!! :D");
+            if(Edad > 65){
+                System.out.println("\n Perteneces a la tercera edad, ya estas ruco :)");
             }                   
         }
         else{
@@ -48,6 +48,18 @@ public class DatosPersonales {
             System.out.println("\nLa edad no es válida." + " La edad debe ser igual o mayor a 0");
         
         }
+        
+        if (Nombre.equals ("MARIA")||
+                Nombre.equals("JUAN")) 
+        {
+            System.out.println("\nTu nombre es muy popular en México");
+        }
+        if(Nombre.equalsIgnoreCase("GUADALUPE")||
+                Nombre.equalsIgnoreCase("PEDRO"))
+        {
+            System.out.println("\nTu nombre es muy popular en México");
+        }
+        
       
     }
     
