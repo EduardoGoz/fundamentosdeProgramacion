@@ -1,6 +1,6 @@
-package calculadoraaritmtica;
+package calculadoraaritmetica;
 import java.util.Scanner;
-public class CalculadoraAritmtica {
+public class CalculadoraAritemtica {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
