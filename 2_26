@@ -1,0 +1,32 @@
+
+package javaapplication17;
+import java.util.Scanner;
+
+public class JavaApplication17 {
+
+
+    public static void main(String[] args) {
+       
+        Scanner entrada = new Scanner(System.in);
+        int x = 0;
+        int y = 0;
+        int bmi = 0;
+        
+        System.out.print("Escriba un numero: ");
+        x = entrada.nextInt();
+        System.out.print("Escriba otro numero: ");
+        y = entrada.nextInt();
+        
+        bmi = y % x;
+        
+        if(bmi == 0){
+            System.out.printf("El numero %d es multiplo del numero %d", x, y);
+        }
+        else{
+            System.out.printf("El numero %d no es multiplo del numero %d \n", x, y);
+        }
+
+        
+    }
+    
+}
