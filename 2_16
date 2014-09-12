@@ -1,0 +1,37 @@
+package capitulo2;
+import java.util.Scanner;
+public class Capitulo2 {
+
+    public static void main(String[] args) {
+        
+        Scanner entrada = new Scanner(System.in);
+        int x,y;
+        
+        System.out.println("Escribe un numero: ");
+        x = entrada.nextInt();
+        System.out.println("Ingrea otro numero: ");
+        y = entrada.nextInt();
+        
+        if( x == y){
+            
+            System.out.printf("Estos son numeros iguales");
+            
+        }
+        else{
+            
+            if( x < y){
+                
+                System.out.printf("%d es mas grande", y);
+                
+            }
+            else{
+                
+                System.out.printf("%d es mas grande", x);
+                
+            }
+            
+        }
+        
+    }
+    
+}
