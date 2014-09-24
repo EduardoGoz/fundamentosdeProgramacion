@@ -1,0 +1,63 @@
+
+package examen;
+
+import java.util.Scanner;
+
+
+public class Examen {
+
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int productos, productosM;
+        double costo, costoP, costo2P, total, total2, totalfinal;
+        boolean productos2;
+        
+        System.out.print("Ingrese el número de productos que usted compró: ");
+        productos = entrada.nextInt();
+        System.out.print("\nIngrese el costo total: ");
+        costo = entrada.nextDouble();
+        System.out.print("\n¿Usted compró productos 2 o mas productos del mismo complemento?(true o false): ");
+        productos2 = entrada.nextBoolean();
+        
+        if( productos2 == true ){
+                        
+            System.out.print("\n¿Cuántos productos con el mismo complemento compró?: ");
+            productosM = entrada.nextInt();
+            System.out.print("\nIngrese el precio del producucto en cuestión: ");
+            costoP = entrada.nextDouble();
+            
+            costo2P = costoP * productosM;
+            total = costo - (costo2P);
+            
+            if( productosM < 2 ){
+                System.out.print("\nUsted no tiene ningún descuento"); 
+            }
+            if( productosM == 2 ){
+                costo2P = costo2P * 0.75; 
+            }
+            if( productosM == 3 ){
+                costo2P = costo2P * 0.50; 
+            }
+            if( productosM == 4 ){
+                costo2P = costo2P * 0.40; 
+            }
+            if( productosM > 4 ){
+                System.out.print("\nUsted no tiene ningún descuento"); 
+            }
+            
+            totalfinal = total + costo2P ;
+            
+            System.out.printf("\nEl total a pagar es: %f", costo2P);      
+                      
+            
+        }
+        else{
+            System.out.println("\nUsted no tiene descuento");
+        }
+    }
+    
+}
+
+
+https://sites.google.com/a/itmazatlan.edu.mx/huerta/vinculacion-1
