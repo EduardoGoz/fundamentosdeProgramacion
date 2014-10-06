@@ -1,0 +1,73 @@
+package pruebacasa;
+
+
+public class Casa
+{
+    //Atributos
+    private String Calle;
+    private int Numero;
+    private String Colonia;
+    private double Area;
+    private int NumPisos;
+    
+    //CONSTRUCTORES: Son métodos de una clase cuyo propósito es darle un valor inicial a las variables de la clase al momento de su creación en memoria
+    //Contrutor por defecto
+    public Casa()
+    {
+        Calle = "";
+        Colonia = "";
+        Numero = 0;
+        Area = 0;
+        NumPisos = 0;
+    }
+    //Constructor con parámetros
+    public Casa(String calle)
+    {
+        Calle = calle;
+        Colonia = "";
+        Numero = 0;
+        Area = 0;
+        NumPisos = 0;
+    }
+    
+    public Casa(String calle, String colonia)
+    {
+        Calle = calle;
+        Colonia = colonia;
+        Numero = 0;
+        Area = 0;
+        NumPisos = 0;
+    }
+    
+    public Casa(String calle, String colonia, int numero)
+    {
+        Calle = calle;
+        Colonia = colonia;
+        Numero = numero;
+        Area = 0;
+        NumPisos = 0;
+    }
+    
+    public Casa(String calle, String colonia, int numero,double area)
+    {
+        Calle = calle;
+        Colonia = colonia;
+        Numero = numero;
+        Area = area;
+        NumPisos = 0;
+    }
+    
+    public Casa(String calle, String colonia, int numero, double area, int numpisos)
+    {
+        Calle = calle;
+        Colonia = colonia;
+        Numero = numero;
+        Area = area;
+        NumPisos = numpisos;
+    }
+    @Override
+    public String toString()
+    {
+        return String.format("Datos de la casa\nCalle: %s\nColonia: %s\nNúmero: %d\nÁrea: %.1f\nNúmero de Pisos: %d\n", Calle, Colonia, Numero, Area, NumPisos);
+    }    
+}
