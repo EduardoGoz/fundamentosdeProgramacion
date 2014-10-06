@@ -1,0 +1,25 @@
+package pruebacasa;
+public class PruebaCasa {
+
+    public static void main(String[] args) 
+    {
+      Casa Centro = new Casa();
+      System.out.println(Centro);
+      
+      Casa cruces = new Casa("Niños Héroes");
+      System.out.println(cruces);
+      
+      Casa Zapata = new Casa("Venustiano Carranza", "Zapata");
+      System.out.println(Zapata);
+      
+      Casa Coloso = new Casa("Piedra roja", "Coloso",16);
+      System.out.println(Coloso);
+      
+      Casa Progreso = new Casa("Durango", "Progreso", 39, 58.9);
+      System.out.println(Progreso);
+      
+      Casa Mozimba = new Casa("Privada de mozimba", "Mozimba", 39, 58.9, 3);
+      System.out.println(Mozimba);
+    }
+    
+}
