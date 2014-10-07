@@ -7,25 +7,25 @@ public class Celular {
 
     public static void main(String[] args) 
     {
-        PruebaCelular Nokia = new PruebaCelular (8);
-         System.out.println(Nokia);
+        Celular Nokia = new Celular (8);
+        System.out.println(Nokia);
          
-         PruebaCelular Samsung = new PruebaCelular (10,true);
-         System.out.println(Samsung);
+        Celular Samsung = new Celular (10,true);
+        System.out.println(Samsung);
          
-        PruebaCelular Sony = new PruebaCelular(10, true, true);
+        Celular Sony = new Celular(10, true, true);
         System.out.println(Sony);
         
-        PruebaCelular motorola = new PruebaCelular(5,true,true,false);
+        Celular motorola = new Celular(5,true,true,false);
         System.out.println( motorola);
         
-        PruebaCelular alcatel = new PruebaCelular(5,true,true,false,"alcatel");
+        Celular alcatel = new Celular(5,true,true,false,"alcatel");
         System.out.println( alcatel);
         
-        PruebaCelular LG = new PruebaCelular(90, true, true, false, "LG", 4.7);
+        Celular LG = new Celular(90, true, true, false, "LG", 4.7);
         System.out.println(LG);
         
-        PruebaCelular Iphone = new PruebaCelular(1000,true,true,false,"APPLE",5.5,true);
+        Celular Iphone = new Celular(1000,true,true,false,"APPLE",5.5,true);
         //System.out.println(Iphone);
         
         Iphone.setEctopollo(4.5);
