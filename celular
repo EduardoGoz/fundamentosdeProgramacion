@@ -1,0 +1,136 @@
+package celular;
+
+public class PruebaCelular {
+    
+    private  int Memoria;
+    private boolean Camara;
+    private boolean reproductor;
+    private boolean Tecladofisico;
+    private String Marca;
+    private double Resolucion;
+    private boolean Lampara;
+    
+    //CONSTRUCTORES: Son métodos de una clase cuyo propósito es darle un valor inicial a las variables de la clase al momento de su creación en memoria
+    //Contrutor por defecto
+    public  PruebaCelular (int memoria )
+            
+    {
+        Memoria = memoria;
+        Camara = false;
+         reproductor = false;
+         Tecladofisico = false;
+         Marca = "" ;
+         Resolucion = 0.0;
+         Lampara = false;
+    }
+     public  PruebaCelular (int memoria, boolean camara )
+            
+    {
+        Memoria = memoria;
+        Camara = camara;
+         reproductor = false;
+         Tecladofisico = false;
+         Marca = "" ;
+         Resolucion = 0.0;
+         Lampara = false;
+    }
+     public  PruebaCelular (int memoria, boolean camara, boolean ectopollo )
+            
+    {
+        Memoria = memoria;
+        Camara = camara;
+         reproductor = ectopollo;
+         Tecladofisico = false;
+         Marca = "" ;
+         Resolucion = 0.0;
+         Lampara = false;
+    }
+    public  PruebaCelular (int memoria, boolean camara, boolean ectopollo,boolean Rafa )
+            
+    {
+        Memoria = memoria;
+        Camara = camara;
+         reproductor = ectopollo;
+         Tecladofisico = Rafa;
+         Marca = "" ;
+         Resolucion = 0.0;
+         Lampara = false;
+    }
+    public  PruebaCelular (int memoria, boolean camara, boolean ectopollo,boolean Rafa,String marca  )
+            
+    {
+        Memoria = memoria;
+        Camara = camara;
+         reproductor = ectopollo;
+         Tecladofisico = Rafa;
+         Marca = marca;
+         Resolucion = 0.0;
+         Lampara = false;
+    }
+    public  PruebaCelular (int memoria, boolean camara, boolean ectopollo, boolean Rafa, String marca, double resolucion )
+            
+    {
+        Memoria = memoria;
+        Camara = camara;
+         reproductor = ectopollo;
+         Tecladofisico = Rafa;
+         Marca = marca;
+         Resolucion = resolucion;
+         Lampara = false;
+    }
+      public  PruebaCelular (int memoria, boolean camara, boolean ectopollo, boolean Rafa, String marca, double resolucion,boolean Acido_Desoxirribonucleico )
+            
+    {
+        Memoria = memoria;
+        Camara = camara;
+         reproductor = ectopollo;
+         Tecladofisico = Rafa;
+         Marca = marca;
+         Resolucion = resolucion;
+         Lampara = Acido_Desoxirribonucleico;
+    }
+      //GETS Y SETS obtener y establecer.
+      public void setEctopollo(double bot){
+          Resolucion = bot;
+      }
+      
+      public void setMarca(String marca){
+          Marca = marca;
+      }
+      
+      public void setMemoria(int memoria){
+          Memoria = memoria;
+      }
+      
+      public void setTecladofisico(boolean teclado){
+          Tecladofisico = teclado;
+      }
+      
+      public void setlampara(boolean lampara)
+      {
+          Lampara=lampara;
+      }
+      
+      public void setReproductor (boolean ectopollo)
+      {
+          reproductor = ectopollo;
+      }
+      
+      public String getMarca(){
+          return Marca;
+      }      
+      
+       public int getMemoria(){
+          return Memoria;
+      } 
+       public boolean getlampara(){
+           return Lampara;
+           
+       }
+     //Metodos
+    @Override
+    public String toString()
+    {
+        return String.format("Datos del Celular \nMemoria: %d Gb.\nCamara: %b \nreproductor: %b\nTeclado Fisico: %b\nMarca: %s\nResolucion: %.1f pulgadas\nLampara: %b\n", Memoria,Camara,reproductor,Tecladofisico,Marca,Resolucion,Lampara);
+    }    
+}
