@@ -1,0 +1,48 @@
+
+
+package celular;
+
+public class Celular {
+
+
+    public static void main(String[] args) 
+    {
+        PruebaCelular Nokia = new PruebaCelular (8);
+         System.out.println(Nokia);
+         
+         PruebaCelular Samsung = new PruebaCelular (10,true);
+         System.out.println(Samsung);
+         
+        PruebaCelular Sony = new PruebaCelular(10, true, true);
+        System.out.println(Sony);
+        
+        PruebaCelular motorola = new PruebaCelular(5,true,true,false);
+        System.out.println( motorola);
+        
+        PruebaCelular alcatel = new PruebaCelular(5,true,true,false,"alcatel");
+        System.out.println( alcatel);
+        
+        PruebaCelular LG = new PruebaCelular(90, true, true, false, "LG", 4.7);
+        System.out.println(LG);
+        
+        PruebaCelular Iphone = new PruebaCelular(1000,true,true,false,"APPLE",5.5,true);
+        //System.out.println(Iphone);
+        
+        Iphone.setEctopollo(4.5);
+        Iphone.setMarca("Sony");
+        Iphone.setMemoria(10);
+        Iphone.setlampara(true);
+        Iphone.setReproductor(false);
+        Iphone.setTecladofisico(true);
+        
+        //System.out.println(Iphone);
+        System.out.println("DATOS DEL CELULAR\n");
+        System.out.printf("Marca: %s\n", Iphone.getMarca());
+        System.out.printf("Memoria: %d\n", Iphone.getMemoria());
+        
+        
+        
+        
+    }
+    
+}
