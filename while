@@ -1,0 +1,61 @@
+package whileejemplo;
+import java.util.Scanner;
+import java.util.Random;
+public class WhileEjemplo {
+
+  
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        Random numeros = new Random();
+        int factor1 = numeros.nextInt(11); 
+        int factor2 = numeros.nextInt(11);          
+        int resultado =  factor1 * factor2;
+        int  numero = resultado;
+        
+        while( resultado == numero ){
+            System.out.printf("Adivina el resultado de la multiplicación de %d X %d = ? : ", factor1, factor2);
+            numero = entrada.nextInt();
+            if( numero == resultado){
+                System.out.println("Felicidades!!!!!!! A huevooooo!!!");
+                factor1 = numeros.nextInt(11); 
+                factor2 = numeros.nextInt(11);
+                resultado = factor1 * factor2;
+                numero = resultado;
+            }
+            else{
+                System.out.printf("Pinche pendejooo!!!! Perro bastardo maldito la respuesta era %d !!!!", resultado);
+                factor1 = numeros.nextInt(11); 
+                factor2 = numeros.nextInt(11);
+                resultado = factor1 * factor2;
+                numero = resultado;
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       /* int numero = 1;
+        int par = 0;
+        
+        
+        while(numero > 0 && par == 0){
+            
+            System.out.println("Ingrese un número positivo parsi quieres continuar o un número negativo o 0 si desea salir: ");
+            numero = entrada.nextInt();
+            par = numero % 2;
+            
+        }
+        System.out.println("Entraste un número negativo o 0 y el progarama se terminó");*/         
+    }
+    
+}
