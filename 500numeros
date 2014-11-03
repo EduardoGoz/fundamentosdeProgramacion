@@ -17,13 +17,17 @@ public class NumerosAleatorios {
         while(bandera <= 500){
             numero = numeros.nextInt(1000);
             modulo = numero % 2;
+            
+            System.out.printf("\nEl número %d es: %d", contador, numero);
+            
             if( modulo == 0){
                 pares++;
+                System.out.println(" El numero es par");
             }
             else{
+                System.out.println(" El número impar");
                 impares++;
             }
-            System.out.printf("\nEl número %d es: %d", contador, numero);
             contador++;
             bandera++;
         }
