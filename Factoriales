@@ -1,0 +1,22 @@
+package factorial;
+import java.util.Scanner;
+public class Factorial {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int numero;
+        int contador;
+        int multiplicacion;
+        
+        System.out.print("Ingresa el número entero al que le quieres calcular el factorial: ");
+        numero = entrada.nextInt();
+        contador = numero;
+        multiplicacion = numero;
+        while( contador > 1 ){
+            multiplicacion = multiplicacion * (contador - 1);
+            contador--;
+        }
+        System.out.printf("El factorial de %d es = %d\n", numero, multiplicacion);
+    }
+    
+}
