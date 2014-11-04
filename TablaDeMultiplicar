@@ -1,0 +1,27 @@
+package whietablamultiplicar;
+import java.util.Locale;
+import java.util.Scanner;
+public class WhieTablaMultiplicar {
+// De lalo
+    public static void main(String[] args) {
+     Scanner entrada = new Scanner (System.in);
+     int tabla = 0;
+     int contador = 1;
+     int resultado = 0;
+
+     while (contador < 11){
+     System.out.printf("Entra la tabla que quieres estudiar: ");
+     tabla = entrada.nextInt();     
+     
+        while (contador <= 10)  
+        {
+            resultado = tabla * contador;
+            System.out.printf("%3d %4d x %3d = %7d\n",contador,tabla,contador,resultado);
+            contador++;
+
+        }
+     }
+     
+    }
+}
+       
