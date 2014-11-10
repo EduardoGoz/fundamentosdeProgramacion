@@ -1,0 +1,58 @@
+package potencia;
+import java.util.Scanner;
+public class Potencia {
+
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int numero;
+        int contador = 1;
+        double e = 0;
+        int exponente = 0;
+        double divisor = 0;
+        double sumatoria = 0;
+        double division = 0;
+        double numeropot = 0;
+        System.out.print("Dame el numero entero al que quieras calcular su factorial: ");
+        numero = entrada.nextInt();
+        System.out.print("Dame el exponenete: ");
+        exponente = entrada.nextInt();
+        
+        System.out.printf("%d elevado a %d  = %.2f\n", numero, exponente, Potencia(numero, exponente));
+        
+        while( contador <= numero ){
+            divisor = Factorial(contador);
+            numeropot = Potencia(numero, contador);
+            division = numeropot / divisor;
+            sumatoria = sumatoria + division;
+            contador++;
+        }
+        e = 1 + sumatoria;
+        System.out.printf("Hasta ahora e = %f\n", e);
+        System.out.printf("Hasta el momento e = %2.f", e);    
+    }
+    
+    public static int Factorial(int num){
+    int contador = num;
+    int multiplicacion = num;
+    while( contador > 1 ){
+        multiplicacion = multiplicacion * (contador - 1);
+        contador--;
+    }
+    System.out.printf("El factorial de !%d es: %d\n",num, multiplicacion);
+    return multiplicacion;
+}
+    
+    public static double Potencia(double base, double exponente ){
+        double resultado = base;
+        int contador = 1;
+        
+        while(contador < exponente){
+            resultado = resultado * base;
+            contador++;
+        }
+        
+        return resultado;
+    }
+    
+}
