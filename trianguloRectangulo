@@ -1,0 +1,59 @@
+
+package e4_36;
+import java.util.Scanner;
+public class E4_36 {
+
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        double x, y, z, mayor;
+        
+        System.out.print("Escribe los lados del triángulo\n");
+        System.out.print("Lado 1: ");
+        x = entrada.nextInt();
+        System.out.print("Lado 2: ");
+        y = entrada.nextInt();
+        System.out.print("Lado 3: ");
+        z = entrada.nextInt();
+        
+        mayor = x;
+        if( y > mayor ) mayor = y;
+        if( z > mayor ) mayor = z;
+        
+        if(mayor == x){
+            x = x * x;
+            y = y * y;
+            z = z * z;
+            mayor = mayor * mayor;
+            
+            if(mayor == (y + z)) System.out.print("Si es un triángulo rectangulo");
+            else System.out.println("No es un triángulo rectangulo");
+        }  
+         
+        if(mayor == y){
+            x = x * x;
+            y = y * y;
+            z = z * z;
+            mayor = mayor * mayor;
+            
+            if(mayor == (x + z)) System.out.print("Si es un triángulo rectangulo");
+            else System.out.println("No es un triángulo rectangulo");
+        }
+                
+        if(mayor == z){
+            x = x * x;
+            y = y * y;
+            z = z * z;
+            mayor = mayor * mayor;
+            
+            if(mayor == (y + x)) System.out.print("Si es un triángulo rectangulo");
+            else System.out.println("No es un triángulo rectangulo");
+        }
+        
+        
+        System.out.printf("\nSu hipotenusa es: %f\n",Math.sqrt(mayor));
+        
+        
+    }
+    
+}
