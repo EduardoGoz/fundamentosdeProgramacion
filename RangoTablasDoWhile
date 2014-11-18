@@ -1,0 +1,35 @@
+
+package rangotablasdowhile;
+import java.util.Scanner;
+public class RangotablasDoWhile {
+
+
+    public static void main(String[] args) {
+        Scanner datos = new Scanner(System.in);
+        int tablaini, tablafin;
+        int i = 1;
+        int j = 1;
+        
+        System.out.printf("Entre la tabla inicial: ");
+        tablaini = datos.nextInt();
+        
+        System.out.printf("Entre la tabla final: ");
+        tablafin = datos.nextInt();
+         j = tablaini;
+        do{
+           
+            System.out.printf("TABLA DEL %d\n", j);
+            System.out.println("No. Multiplicación Resultado");
+            i = 1;
+            do{
+                System.out.printf("%3d%5d X %3d = %6d\n", i, j, i, j * i );
+                i++;
+            }while(i <= 10);
+            
+            j++;    
+        
+        }while( j <= tablafin );
+        
+    }
+    
+}
