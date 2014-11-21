@@ -54,9 +54,9 @@ public class MenuDowhile1 {
                 else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
                 break;
             }
-        } 
-         
-         
+            default:
+                System.out.println("¡Adios!");
+        }  
          
          
       }
