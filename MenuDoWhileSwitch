@@ -9,6 +9,7 @@ public class MenuDowhile1 {
         Scanner datos = new Scanner(System.in);
         Random numeroaleatorio = new Random();
         int opcion, num1, num2, suma, resta, multi, res;
+        double divi, resd, num3, num4;
         
         
         do
@@ -17,7 +18,8 @@ public class MenuDowhile1 {
          System.out.println("Tutor de sumas             [1]");
          System.out.println("Tutor de restas            [2]");
          System.out.println("Tutor de Multiplicaciones  [3]");
-         System.out.println("Salir                      [4]");
+         System.out.println("Tutor de Divisiones        [4]");
+         System.out.println("Salir                      [5]");
          System.out.printf("Opcion: ");
         
          opcion = datos.nextInt();
@@ -30,7 +32,7 @@ public class MenuDowhile1 {
                 System.out.printf("%d + %d = ", num1, num2);
                 suma = datos.nextInt();
                 res = num1 + num2;
-                if( suma == (num1 + num2) ) System.out.println("¡Acertaste!");
+                if( suma == res ) System.out.println("¡Acertaste!");
                 else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
                 break;
             }
@@ -40,7 +42,7 @@ public class MenuDowhile1 {
                 System.out.printf("%d - %d = ", num1, num2);
                 resta = datos.nextInt();
                 res = num1 - num2;
-                if( resta == (num1 - num2) ) System.out.println("¡Acertaste!");
+                if( resta == res ) System.out.println("¡Acertaste!");
                 else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
                 break;
             }
@@ -50,8 +52,18 @@ public class MenuDowhile1 {
                 System.out.printf("%d X %d = ", num1, num2);
                 multi = datos.nextInt();
                 res = num1 * num2;
-                if( multi == (num1 * num2) ) System.out.println("¡Acertaste!");
+                if( multi == res ) System.out.println("¡Acertaste!");
                 else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
+                break;
+            }
+            case 4:{
+                num3 = numeroaleatorio.nextInt(11);
+                num4 = numeroaleatorio.nextInt(11);
+                System.out.printf("%.0f / %.0f = ", num3, num4);
+                divi = datos.nextDouble();
+                resd = num3 / num4;
+                if( divi == resd ) System.out.println("¡Acertaste!");
+                else System.out.printf("¡Fallaste! La respuesta es: %.2f\n", resd);
                 break;
             }
             default:
