@@ -1,0 +1,64 @@
+package menudowhile1;
+import java.util.Scanner;
+import java.util.Random;
+
+public class MenuDowhile1 {
+
+   
+    public static void main(String[] args) {
+        Scanner datos = new Scanner(System.in);
+        Random numeroaleatorio = new Random();
+        int opcion, num1, num2, suma, resta, multi, res;
+        
+        
+        do
+        {   
+         System.out.println("Menu de opciones");
+         System.out.println("Tutor de sumas             [1]");
+         System.out.println("Tutor de restas            [2]");
+         System.out.println("Tutor de Multiplicaciones  [3]");
+         System.out.println("Salir                      [4]");
+         System.out.printf("Opcion: ");
+        
+         opcion = datos.nextInt();
+        }while(opcion <1 || opcion >4);
+        
+        switch(opcion){
+            case 1:{
+                num1 = numeroaleatorio.nextInt(501);
+                num2 = numeroaleatorio.nextInt(501);
+                System.out.printf("%d + %d = ", num1, num2);
+                suma = datos.nextInt();
+                res = num1 + num2;
+                if( suma == (num1 + num2) ) System.out.println("¡Acertaste!");
+                else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
+                break;
+            }
+            case 2:{
+                num1 = numeroaleatorio.nextInt(501);
+                num2 = numeroaleatorio.nextInt(501);
+                System.out.printf("%d - %d = ", num1, num2);
+                resta = datos.nextInt();
+                res = num1 - num2;
+                if( resta == (num1 - num2) ) System.out.println("¡Acertaste!");
+                else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
+                break;
+            }
+            case 3:{
+                num1 = numeroaleatorio.nextInt(11);
+                num2 = numeroaleatorio.nextInt(11);
+                System.out.printf("%d X %d = ", num1, num2);
+                multi = datos.nextInt();
+                res = num1 * num2;
+                if( multi == (num1 * num2) ) System.out.println("¡Acertaste!");
+                else System.out.printf("¡Fallaste! La respuesta es: %d\n", res);
+                break;
+            }
+        } 
+         
+         
+         
+         
+      }
+
+}
