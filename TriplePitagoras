@@ -1,0 +1,39 @@
+package triplepitagoras;
+
+public class TriplePitagoras {
+
+    public static void main(String[] args) {
+        //int cuadrado1 = 0;
+        //int cuadrado2 = 0;
+        //int cuadrado3 = 0;
+        int SumaLados = 0;
+        int contador = 1;
+        
+        for (int lado1 = 1; lado1 <= 500; lado1++) {
+            for (int lado2 = 1; lado2 <= 500; lado2++) {
+                for (int hipotenusa = 1; hipotenusa <= 500; hipotenusa++) {
+                    SumaLados = (lado1 * lado1) + (lado2 * lado2);
+                      //cuadrado1 = lado1*lado1;
+                    //cuadrado2 = lado2*lado2;
+                    //cuadrado3 = hipotenusa * hipotenusa;
+                    if ((hipotenusa * hipotenusa) == SumaLados) {
+                        System.out.printf("\n\n%d Es un Traingulo recto y sus triples de pitagoras son:\n"
+                                + "\tLado 1: " + lado1
+                                + "\tLado 2: " + lado2
+                                + "\tHipotenusa: " + hipotenusa,contador);
+                        contador++;
+                    }
+                }
+            }  
+        }
+        System.out.println("\n");
+    }
+}
+
+
+
+
+
+
+
+                  
