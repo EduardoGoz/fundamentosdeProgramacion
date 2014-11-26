@@ -1,0 +1,43 @@
+package pi;
+import java.util.Scanner;
+
+public class Pi {
+
+   
+    public static void main(String[] args) {
+        Scanner datos = new Scanner(System.in);
+        int cantidadTerminos = 0;
+        final int NUMERADOR = 4;
+        int denominador = 1;
+        double division = 0;
+        double suma = 0;
+        double pi =0;
+        System.out.println("Entre la cantidad de términos de la serie "
+                + "para calcular PI: ");
+        cantidadTerminos= datos.nextInt();
+        
+        if (cantidadTerminos <= 0)
+        {
+            System.out.println("No se puede calcular PI con 0 o menos "
+                    + "térmnos chabot");
+            
+        }
+        else
+        {
+            
+            for (int i= 1; i <= cantidadTerminos; i++,denominador += 2)
+            {
+                division = (double) NUMERADOR / denominador;
+                if (i % 2==0)   suma -= division;
+                else suma += division;
+             
+                System.out.printf("Suma parcial %d  = %.10f\n", i, suma);
+                
+            }
+            pi = suma;
+            System.out.printf("El valor de PI es : %.10f", pi);
+        }
+        
+    }
+    
+}
