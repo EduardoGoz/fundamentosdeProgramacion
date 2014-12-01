@@ -1,0 +1,35 @@
+package arreglocadenas;
+import java.util.Scanner;
+
+public class ArregloCadenas {
+
+    public static void main(String[] args) {
+        Scanner datos = new Scanner(System.in);
+        String ArregloStrings[] = { "Juan","Gina","Santiago","Alejandra","Monica" };
+        
+        for(int i = 0; i < ArregloStrings.length; i++)
+        {
+            System.out.printf("El nombre %d es: %s\n",i,ArregloStrings[i]);
+        }
+        
+        String ArregloStrings2[] = new String[5];
+        
+        for(int m = 0; m < ArregloStrings.length; m++)
+        {
+            System.out.printf("El nombre es: %s\n", ArregloStrings2[m]);
+        }
+        
+        
+        for(int j = 0; j < ArregloStrings2.length; j++)
+        {
+            System.out.printf("Dame el nombre %d: ",j);
+            ArregloStrings2[j] = datos.nextLine();
+        }
+        
+        for(int k = 0; k < ArregloStrings2.length; k++)
+        {
+            System.out.printf("El nombre %d es: %s\n",k, ArregloStrings2[k]);
+        }
+    }
+    
+}
