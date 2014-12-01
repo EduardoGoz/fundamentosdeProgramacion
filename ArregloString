@@ -13,13 +13,13 @@ public class ArregloCadenas {
         }
         
         String ArregloStrings2[] = new String[5];
-        
+        System.out.print("\n");
         for(int m = 0; m < ArregloStrings.length; m++)
         {
-            System.out.printf("El nombre es: %s\n", ArregloStrings2[m]);
+            System.out.printf("El nombre %d es: %s\n",m, ArregloStrings2[m]);
         }
         
-        
+        System.out.print("\n");
         for(int j = 0; j < ArregloStrings2.length; j++)
         {
             System.out.printf("Dame el nombre %d: ",j);
