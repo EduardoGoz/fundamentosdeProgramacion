@@ -1,0 +1,52 @@
+
+package arregloenteros;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class ArregloEnteros {
+
+
+    public static void main(String[] args) {
+    
+    Random numAleatorio = new Random();
+    Scanner datos = new Scanner (System.in);
+    int numero = 0;
+    //Declaracion del arreglo de enteros dandole valores iniciales
+    int ArregloEnteros [] = {5, 6, 7, 8, 9};
+    
+    for (int i = 0; i < ArregloEnteros.length; i++)
+     {
+        System.out.println(ArregloEnteros[i]);
+     }
+         
+    
+    // Otro manera de declarar arreglos
+    int ArregloEnteros2[] = new int [5];
+    // Si no se le dan valores iniciales, pos nanches, se le ponen 
+    //los que se les pegue la pinche gana
+    for (int j = 0; j < ArregloEnteros2.length; j++)
+    {
+        System.out.printf("%d: %d\n", j, ArregloEnteros2[j]);  
+    }   
+    // Se llena el arreglo con numeros aleatorios
+    for (int k = 0; k < ArregloEnteros2.length; k++)
+    {
+        ArregloEnteros2[k] = numAleatorio.nextInt(101);
+        System.out.printf("%d: %d\n", k, ArregloEnteros2[k]);  
+    }
+    
+    for (int l = 0; l < ArregloEnteros2.length; l++)
+    {
+        System.out.printf("Entra el numero %d: ", l+1);
+        
+        ArregloEnteros2[l] = datos.nextInt();
+    } 
+    for (int l = 0; l < ArregloEnteros2.length; l++)
+    {
+        System.out.printf("El numero de la casilla %d es : %d\n", l + 1 , ArregloEnteros2[l]);
+    }
+    
+    }
+    
+}
