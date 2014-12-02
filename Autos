@@ -1,0 +1,83 @@
+package arregloautos;
+
+public class Auto 
+{
+    private int NumPuertas;
+    private String Color;
+    private String Marca;
+    private double Precio;
+    
+    public Auto()
+    {
+        NumPuertas = 0;
+        Color = "";
+        Marca = "";
+        Precio = 0.0;
+    }
+    
+    public Auto(int numpuertas)
+    {
+        NumPuertas = numpuertas;
+        Color = "";
+        Marca = "";
+        Precio = 0.0;
+    }
+    public Auto(int numpuertas, String marca)
+    {
+        NumPuertas = numpuertas;
+        Color = "";
+        Marca = marca;
+        Precio = 0.0;
+    }
+    public Auto(int numpuertas, String marca, String color)
+    {
+        NumPuertas = numpuertas;
+        Color = color;
+        Marca = marca;
+        Precio = 0.0;
+    }
+    public Auto(int numpuertas, String marca, String color, double precio)
+    {
+        NumPuertas = numpuertas;
+        Color = color;
+        Marca = marca;
+        Precio = precio;
+    }
+    
+    //Get's
+    
+    public Double Precio(){
+        return Precio;
+    }
+    public int Puertas(){
+        return NumPuertas;
+    }
+    public String Marca(){
+        return Marca;
+    }
+    public String Ectopollo(){
+        return Color;
+    }
+    
+    //Set's
+    
+    public void SetPrecio(double ectopollo){
+        Precio =  ectopollo;
+    }
+    public void SetColor(String ectopollo){
+        Color =  ectopollo;
+    }
+    public void SetMarca(String ectopollo){
+        Marca =  ectopollo;
+    }
+    public void SetPuertas( int ectopollo){
+        NumPuertas =  ectopollo;
+    }
+     
+    @Override
+    public String toString(){
+       return String.format("Datos del auto\nNumero de puertas: %d\nColor: %s\nMarca: %s\nPrecio: %.2f\n",Puertas(),Ectopollo(),Marca(),Precio());
+    }
+    
+    
+}
