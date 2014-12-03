@@ -1,83 +1,132 @@
+
 package arregloautos;
 
-public class Auto 
-{
-    private int NumPuertas;
+import java.util.Scanner;
+
+public class Auto {
+    private int Numpuertas;
     private String Color;
     private String Marca;
     private double Precio;
+    static int ContadorAutos = 0;
     
-    public Auto()
-    {
-        NumPuertas = 0;
+    
+    
+    
+    public Auto(){
+        Numpuertas =0;
         Color = "";
         Marca = "";
         Precio = 0.0;
     }
-    
-    public Auto(int numpuertas)
-    {
-        NumPuertas = numpuertas;
-        Color = "";
-        Marca = "";
-        Precio = 0.0;
-    }
-    public Auto(int numpuertas, String marca)
-    {
-        NumPuertas = numpuertas;
+    public Auto(String marca){
+        Numpuertas = 0;
         Color = "";
         Marca = marca;
         Precio = 0.0;
+        
     }
-    public Auto(int numpuertas, String marca, String color)
-    {
-        NumPuertas = numpuertas;
-        Color = color;
+    public Auto(String marca,double precio){
+        Numpuertas = 0;
+        Color = "";
         Marca = marca;
-        Precio = 0.0;
+        Precio = precio;
+        
     }
-    public Auto(int numpuertas, String marca, String color, double precio)
-    {
-        NumPuertas = numpuertas;
+      
+    public Auto(String marca,double precio,int numpuertas){
+        Numpuertas = numpuertas;
+        Color = "";
+        Marca = marca;
+        Precio = precio;
+        
+    }
+     public Auto(String marca,double precio,int numpuertas,String color){
+        Numpuertas = numpuertas;
         Color = color;
         Marca = marca;
         Precio = precio;
+        
     }
-    
-    //Get's
-    
-    public Double Precio(){
-        return Precio;
-    }
-    public int Puertas(){
-        return NumPuertas;
-    }
-    public String Marca(){
-        return Marca;
-    }
-    public String Ectopollo(){
-        return Color;
-    }
-    
-    //Set's
-    
-    public void SetPrecio(double ectopollo){
-        Precio =  ectopollo;
-    }
-    public void SetColor(String ectopollo){
-        Color =  ectopollo;
-    }
-    public void SetMarca(String ectopollo){
-        Marca =  ectopollo;
-    }
-    public void SetPuertas( int ectopollo){
-        NumPuertas =  ectopollo;
-    }
+     public String getMarca(){
+         return Marca;
+     }
+     public void setMarca(String marca){
+        Marca = marca;
+         
+     }
+     public double getPrecio(){
+         return Precio;
+     }
+     public void setPrecio(double precio){
+         Precio = precio;
+     }
+     public int getNumpuertas(){
+         return Numpuertas;
+     }
+     public void setNumpuertas(int numpuertas){
+         Numpuertas = numpuertas;
+     }
+     public String getColor(){
+         return Color;
+     }
+     public void setColor(String color){
+         Color = color;
+     }
+     public static void setContador(int cont){
+         ContadorAutos = cont;
+     }
+     public static int getContador(){
+         return ContadorAutos;
+     }
+     
      
     @Override
-    public String toString(){
-       return String.format("Datos del auto\nNumero de puertas: %d\nColor: %s\nMarca: %s\nPrecio: %.2f\n",Puertas(),Ectopollo(),Marca(),Precio());
-    }
-    
+     public String toString(){
+         return String.format("\n\nDatos del Auto\n"
+                 + "Marca: %s\nprecio: %.2f\nNum puertas:%d\n"
+                 + "color: %s\nCintador: %d",getMarca(),getPrecio(),getNumpuertas()
+         ,getColor(),getContador());
     
 }
+    public void entradadedatos(){
+        String marca;
+        String color;
+        int numpuertas;
+        double precio;
+        
+        Scanner datos2 = new Scanner(System.in);
+        System.out.println("\nIngresa el color: ");
+        color = datos2.nextLine();
+        System.out.println("Ingresa la marca: ");
+        marca = datos2.nextLine();
+        System.out.println("Ingresa el Precio: ");
+        precio = datos2.nextDouble();
+        System.out.println("Ingresa el número de puertas: ");
+        numpuertas = datos2.nextInt();
+        
+        setMarca(marca);
+        setPrecio(precio);
+        setNumpuertas(numpuertas);
+        setColor(color);        
+    }
+    
+    public static void Alta(Auto listaAutos[]){
+        int pos = -1;
+        if( Auto.ContadorAutos >= 5 ) System.out.println("La lista está llena");
+        else{
+            for(int i = 0; i < listaAutos.length; i++){
+                if( listaAutos[i].getMarca().equalsIgnoreCase("") ){
+                    pos = i;
+                    break;
+                }
+            }
+            if( pos == -1) System.out.println("No se encontro ningun lugar vacío en el arreglo.");
+            else{
+                listaAutos[pos].entradadedatos();
+                Auto.ContadorAutos++;
+            }
+        }
+    }
+}
+
