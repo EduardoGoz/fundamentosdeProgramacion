@@ -1,30 +1,44 @@
+
+
 package arregloautos;
+
 import java.util.Scanner;
+import java.util.Arrays;
 public class ArregloAutos {
+
 
     public static void main(String[] args) {
         Scanner datos = new Scanner(System.in);
-        Auto ArregloAutos[] = new Auto[5];     
+        Auto ArregloAutos[] = new Auto[5];
+        
         
         Auto auto1 = new Auto();
-        Auto auto2 = new Auto(4);
-        Auto auto3 = new Auto(4,"Ford");
-        Auto auto4 = new Auto(4,"Dodge", "Azul");
-        Auto auto5 = new Auto(4,"Lamborghini", "Amarillo", 234691.34);
+        Auto auto2 = new Auto("ford");
+        Auto auto3 = new Auto("dodge",200000);
+        Auto auto4 = new Auto("jeep",200003,4,"Blanco");
+        Auto auto5 = new Auto("Mustang",298471234,2,"Rojo");
+       
         
+        Auto.Alta(ArregloAutos);
         
-        ArregloAutos[0] = auto1;
-        ArregloAutos[1] = auto2;
-        ArregloAutos[2] = auto3;
-        ArregloAutos[3] = auto4;
-        ArregloAutos[4] = auto5;
-        System.out.println("");
+        /*
+        ArregloAutos[0]= auto1;
+        ArregloAutos[1]= auto2;
+        ArregloAutos[2]= auto3;
+        ArregloAutos[3]= auto4;
+        ArregloAutos[4]= auto5;
         
-        
-        for(int i = 0; i < ArregloAutos.length; i++){
+                              
+        for(int i = 0; i < ArregloAutos.length;i++){
             System.out.println(ArregloAutos[i]);
         }
         
+        ArregloAutos[0].entradadedatos();
+        System.out.println(ArregloAutos[0]);*/
+        
+     
+        
+     
     }
     
 }
