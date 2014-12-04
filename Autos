@@ -1,132 +1,165 @@
 
-package arregloautos;
 
-import java.util.Scanner;
+package arregloauto;
+import java.util.*;
 
-public class Auto {
+public class Auto
+{
     private int Numpuertas;
     private String Color;
     private String Marca;
     private double Precio;
-    static int ContadorAutos = 0;
+    private static int contadorAutos= 0;
     
-    
-    
-    
-    public Auto(){
-        Numpuertas =0;
-        Color = "";
-        Marca = "";
-        Precio = 0.0;
+     public Auto() {
+        this.Numpuertas =0;
+        this.Color = "";
+        this.Marca = "";
+        this.Precio = 0.0;
     }
-    public Auto(String marca){
-        Numpuertas = 0;
-        Color = "";
-        Marca = marca;
-        Precio = 0.0;
-        
+     public Auto(String Marca) {
+        this.Numpuertas =0;
+        this.Color = "";
+        this.Marca = Marca;
+        this.Precio = 0.0;
     }
-    public Auto(String marca,double precio){
-        Numpuertas = 0;
-        Color = "";
-        Marca = marca;
-        Precio = precio;
-        
+
+    public Auto( String Marca, double Precio) {
+        this.Numpuertas =0;
+        this.Color = "";
+        this.Marca = Marca;
+        this.Precio = Precio;
+    }
+    
+     public Auto( String Marca, double Precio,int Numpuertas) {
+        this.Numpuertas = Numpuertas;
+        this.Color = "";
+        this.Marca = Marca;
+        this.Precio = Precio;
+    }
+    
+      public Auto(  String Marca, double Precio,int Numpuertas, String Color) {
+        this.Numpuertas =Numpuertas;
+        this.Color = Color;
+        this.Marca = Marca;
+        this.Precio = Precio;
     }
       
-    public Auto(String marca,double precio,int numpuertas){
-        Numpuertas = numpuertas;
-        Color = "";
-        Marca = marca;
-        Precio = precio;
-        
+      
+
+    public int getNumpuertas() {
+        return Numpuertas;
     }
-     public Auto(String marca,double precio,int numpuertas,String color){
-        Numpuertas = numpuertas;
-        Color = color;
-        Marca = marca;
-        Precio = precio;
-        
+
+    public void setNumpuertas(int Numpuertas) {
+        this.Numpuertas = Numpuertas;
     }
-     public String getMarca(){
-         return Marca;
-     }
-     public void setMarca(String marca){
-        Marca = marca;
-         
-     }
-     public double getPrecio(){
-         return Precio;
-     }
-     public void setPrecio(double precio){
-         Precio = precio;
-     }
-     public int getNumpuertas(){
-         return Numpuertas;
-     }
-     public void setNumpuertas(int numpuertas){
-         Numpuertas = numpuertas;
-     }
-     public String getColor(){
-         return Color;
-     }
-     public void setColor(String color){
-         Color = color;
-     }
-     public static void setContador(int cont){
-         ContadorAutos = cont;
-     }
-     public static int getContador(){
-         return ContadorAutos;
-     }
-     
-     
-    @Override
-     public String toString(){
-         return String.format("\n\nDatos del Auto\n"
-                 + "Marca: %s\nprecio: %.2f\nNum puertas:%d\n"
-                 + "color: %s\nCintador: %d",getMarca(),getPrecio(),getNumpuertas()
-         ,getColor(),getContador());
+
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
+    }
+
+    public static int getContadorAutos() {
+        return contadorAutos;
+    }
+
+    public static void setContadorAutos(int contadorAutos) {
+        Auto.contadorAutos = contadorAutos;
+    }
+   
     
-}
-    public void entradadedatos(){
+    
+    @Override
+     public String toString()
+      {
+      return String.format("\nDatos del Auto\n"
+              + "Marca: %s\nPrecio: %.2f\nNumero de Puertas: %d\nColor: %s\nContador: %d\n",
+              getMarca(), getPrecio(), getNumpuertas(), getColor(), getContadorAutos());    
+      } 
+      
+    public void EntradaDatos()
+    {
         String marca;
         String color;
         int numpuertas;
         double precio;
         
-        Scanner datos2 = new Scanner(System.in);
-        System.out.println("\nIngresa el color: ");
-        color = datos2.nextLine();
-        System.out.println("Ingresa la marca: ");
-        marca = datos2.nextLine();
-        System.out.println("Ingresa el Precio: ");
-        precio = datos2.nextDouble();
-        System.out.println("Ingresa el número de puertas: ");
-        numpuertas = datos2.nextInt();
+        Scanner datos = new Scanner (System.in); 
+        
+        System.out.printf("Entra la marca del auto: ");
+        marca = datos.nextLine();
+        System.out.printf("Entra el color del auto: ");
+        color = datos.nextLine();
+        System.out.println("Entra el número de puerta del auto: ");
+        numpuertas = datos.nextInt();
+        System.out.println("Entra el precio del auto:");
+        precio = datos.nextDouble();
+        
+        
         
         setMarca(marca);
+        setColor(color);
+        setNumpuertas (numpuertas);
         setPrecio(precio);
-        setNumpuertas(numpuertas);
-        setColor(color);        
+        
+        
+    }
+    public static void Alta(Auto listaAutos[])        
+    {
+        
+        int posicion=-1;
+        if(Auto.contadorAutos >=5)
+        {
+            System.out.println("Ahorita no joven, a la vuelta t(°u°t)");
+            
+        }
+        else
+        {
+            for(int i = 0;i<listaAutos.length;i++){
+                  if(listaAutos[i].getMarca().equalsIgnoreCase(""))   
+                  {
+                      posicion=i;
+                      break;
+                  }
+                  
+            }
+       if (posicion == -1)
+       {
+           System.out.println("ya estamos conflex chabot! no hay lugar vacion en el arreglo");
+       }
+       else{
+       listaAutos[posicion].EntradaDatos();
+       Auto.contadorAutos++;
+           System.out.println("Se insertó con éxito el auto en la lista chabot.");
+           }
+        }
     }
     
-    public static void Alta(Auto listaAutos[]){
-        int pos = -1;
-        if( Auto.ContadorAutos >= 5 ) System.out.println("La lista está llena");
-        else{
-            for(int i = 0; i < listaAutos.length; i++){
-                if( listaAutos[i].getMarca().equalsIgnoreCase("") ){
-                    pos = i;
-                    break;
-                }
-            }
-            if( pos == -1) System.out.println("No se encontro ningun lugar vacío en el arreglo.");
-            else{
-                listaAutos[pos].entradadedatos();
-                Auto.ContadorAutos++;
-            }
+    public static void ConsultaGeneral(Auto listaAuto[])
+    {
+        for (int i =0;i < listaAuto.length; i++)
+        {
+            System.out.println(listaAuto[i]);
         }
     }
 }
-
