@@ -1,0 +1,82 @@
+
+package arreglobidimensional;
+import java.util.*;
+public class ArregloBidimensional {
+
+
+    public static void main(String[] args) {
+        final int col = 8;
+        final int fil = 8;
+        Random numaleatorio = new Random();
+        Scanner datos = new Scanner(System.in);
+        int ele = 4;
+        int matriz[][] = new int [fil][col];
+        
+        do{
+            do{
+                System.out.println("\nMENÚ");
+                System.out.println("Numeros aleatorios              [1]");
+                System.out.println("De números 1 en diagonal        [2]");
+                System.out.println("De números 1 en doble diagonal  [3]");
+                System.out.println("Salir                           [4]");
+                System.out.print("Opcion: ");
+                ele = datos.nextInt();
+            }while(ele < 1 || ele > 4);
+            
+            switch(ele){
+                case 1: {
+                    for(int fila = 0; fila < fil ; fila++){
+                        for(int colu = 0; colu < col; colu++){
+                            matriz [fila][colu] = numaleatorio.nextInt(11);
+                        }
+                    }
+                    
+                    for(int fila = 0; fila < fil; fila++){
+                        for(int colu = 0; colu < col; colu++){
+                            System.out.printf("\n%3d -",matriz[fila][colu]);
+                        }
+                    System.out.println("");
+                    }
+                    break;
+                }
+                case 2: {
+                    for(int fila = 0, colu = 0; fila < fil; fila++,colu++){
+                        matriz[fila][colu] = 1;
+                    }
+                    for(int fila = 0; fila < fil; fila++){
+                        for(int colu = 0; colu < col; colu++){
+                            System.out.printf("\n%3d -",matriz[fila][colu]);
+                        }
+                    System.out.println("");
+                    }
+                    break;
+                }
+                case 3: {
+                    for(int fila = 7, colu = 0; fila >= 0; fila--,colu++){
+                        matriz[fila][colu] = 1;
+                    }
+                    for(int fila = 0, colu = 0; fila < fil; fila++,colu++){
+                        matriz[fila][colu] = 1;
+                    }
+                    for(int fila = 0; fila < fil; fila++){
+                        for(int colu = 0; colu < col; colu++){
+                            System.out.printf("\n%3d -",matriz[fila][colu]);
+                        }
+                    System.out.println("");
+                    }
+                    break;
+                }
+                
+                default: 
+                    System.out.println("Adiós beibi!");
+                    break;
+            }        
+
+            
+
+
+            
+        }while( ele != 4);
+    }
+    
+}
