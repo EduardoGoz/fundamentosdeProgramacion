@@ -1,0 +1,177 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pruebaperiferico;
+
+/**
+ *
+ * @author salaB
+ */
+public class Computadora {
+    private String Modelo;
+    private String Color;
+    private int ContadorMemoria;
+    private int NoUSB;
+    private int NoSerie;
+    private Periferico ListaPeriferico[];
+    private final int TAMANO = 3;
+    private int contador = 0;
+
+    public Computadora(String Modelo, String Color, int ContadorMemoria, int NoUSB, int NoSerie) {
+        this.Modelo = Modelo;
+        this.Color = Color;
+        this.ContadorMemoria = ContadorMemoria;
+        this.NoUSB = NoUSB;
+        this.NoSerie = NoSerie;
+        this.ListaPeriferico =  new Periferico[TAMANO];
+        for(int i = 0; i < TAMANO; i++ ){
+            this.ListaPeriferico[i] = new Periferico();
+        }
+    }
+    public Computadora(String Modelo, String Color, int ContadorMemoria, int NoUSB) {
+        this.Modelo = Modelo;
+        this.Color = Color;
+        this.ContadorMemoria = ContadorMemoria;
+        this.NoUSB = NoUSB;
+        this.NoSerie = 0;
+        this.ListaPeriferico =  new Periferico[TAMANO];
+        for(int i = 0; i < TAMANO; i++ ){
+            this.ListaPeriferico[i] = new Periferico();
+        }
+    }
+    public Computadora(String Modelo, String Color, int ContadorMemoria) {
+        this.Modelo = Modelo;
+        this.Color = Color;
+        this.ContadorMemoria = ContadorMemoria;
+        this.NoUSB = 0;
+        this.NoSerie = 0;
+        this.ListaPeriferico =  new Periferico[TAMANO];
+        for(int i = 0; i < TAMANO; i++ ){
+            this.ListaPeriferico[i] = new Periferico();
+        }
+    }
+    public Computadora(String Modelo, String Color) {
+        this.Modelo = Modelo;
+        this.Color = Color;
+        this.ContadorMemoria = 0;
+        this.NoUSB = 0;
+        this.NoSerie = 0;
+        this.ListaPeriferico =  new Periferico[TAMANO];
+        for(int i = 0; i < TAMANO; i++ ){
+            this.ListaPeriferico[i] = new Periferico();
+        }
+    }
+    public Computadora(String Modelo) {
+        this.Modelo = Modelo;
+        this.Color = "";
+        this.ContadorMemoria = 0;
+        this.NoUSB = 0;
+        this.NoSerie = 0;
+        this.ListaPeriferico =  new Periferico[TAMANO];
+        for(int i = 0; i < TAMANO; i++ ){
+            this.ListaPeriferico[i] = new Periferico();
+        }
+    }
+    public Computadora() {
+        this.Modelo = "";
+        this.Color = "";
+        this.ContadorMemoria = 0;
+        this.NoUSB = 0;
+        this.NoSerie = 0;
+        this.ListaPeriferico =  new Periferico[TAMANO];
+        for(int i = 0; i < TAMANO; i++ ){
+            this.ListaPeriferico[i] = new Periferico();
+        }
+    }
+
+    public String getModelo() {
+        return Modelo;
+    }
+
+    public void setModelo(String Modelo) {
+        this.Modelo = Modelo;
+    }
+
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
+
+    public int getContadorMemoria() {
+        return ContadorMemoria;
+    }
+
+    public void setContadorMemoria(int ContadorMemoria) {
+        this.ContadorMemoria = ContadorMemoria;
+    }
+
+    public int getNoUSB() {
+        return NoUSB;
+    }
+
+    public void setNoUSB(int NoUSB) {
+        this.NoUSB = NoUSB;
+    }
+
+    public int getNoSerie() {
+        return NoSerie;
+    }
+
+    public void setNoSerie(int NoSerie) {
+        this.NoSerie = NoSerie;
+    }
+
+    public Periferico[] getListaPeriferico() {
+        return ListaPeriferico;
+    }
+
+    public void setListaPeriferico(Periferico Periferico) {
+        boolean bandera = false;
+        int posicion = 0;
+        if(contador >= TAMANO ) System.out.println("\nYa no hay espacio en la lista de perifèricos\n");
+        else{
+            if(Periferico.isAgregado() == true) System.out.println("\nYa se ha agreagado a otra computadora este perifèrico\n");
+            else{
+                for(int i = 0; i < TAMANO; i++){
+                    if(this.ListaPeriferico[i].getNoSerie() == 0){
+                        posicion = i;
+                        bandera = true;
+                    }
+                }
+                if(bandera == false) System.out.println("\nNo se encontro un lugar en la lista\n");
+                else{
+                    this.ListaPeriferico[posicion] = Periferico;
+                    this.ListaPeriferico[posicion].setAgregado(bandera);
+                    if(this.ListaPeriferico[posicion].getNombre() != "" && this.getModelo() != "") System.out.println("\nSe ha agregado correctamente el perifèrico " + this.ListaPeriferico[posicion].getNombre() + " a la computadora " + this.getModelo() + " \n");
+                    else System.out.println("\nSe ha agregado el periférico a la computadora\n");
+                    contador++;
+                }
+            }
+        }
+    }
+    
+
+    @Override
+    public String toString() {
+        return "\nComputadora" + "\nModelo: " + Modelo + "\nColor: " + Color + "\nContadorMemoria: " 
+                + ContadorMemoria + "\nNoUSB: " + NoUSB + "\nNoSerie: " + NoSerie + 
+                "\nLista de Perifericos: " + Imprimir();
+    }
+    
+    public String Imprimir(){
+        String cadena = "";
+        for(int i =0; i< TAMANO; i++){
+            if(this.ListaPeriferico[i].getNoSerie() != 0) cadena = cadena + "\n" + this.ListaPeriferico[i].toString();
+        }
+        return cadena;
+    }
+    
+    
+    
+    
+}
