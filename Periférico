@@ -1,0 +1,113 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pruebaperiferico;
+
+/**
+ *
+ * @author salaB
+ */
+public class Periferico {
+    private boolean entrada;
+    private boolean salida;
+    private String Nombre;
+    private int NoSerie;
+    private boolean agregado;
+
+    public Periferico(boolean entrada, boolean salida, String Nombre, int NoSerie, boolean agregado) {
+        this.entrada = entrada;
+        this.salida = salida;
+        this.Nombre = Nombre;
+        this.NoSerie = NoSerie;
+        this.agregado = agregado;
+    }
+
+    public Periferico(boolean entrada, boolean salida, String Nombre, int NoSerie) {
+        this.entrada = entrada;
+        this.salida = salida;
+        this.Nombre = Nombre;
+        this.NoSerie = NoSerie;
+        this.agregado = false;
+    }
+    public Periferico(boolean entrada, boolean salida, String Nombre) {
+        this.entrada = entrada;
+        this.salida = salida;
+        this.Nombre = Nombre;
+        this.NoSerie = 0;
+        this.agregado = false;
+    }
+    public Periferico(boolean entrada, boolean salida) {
+        this.entrada = entrada;
+        this.salida = salida;
+        this.Nombre = "";
+        this.NoSerie = 0;
+        this.agregado = false;
+    }
+    public Periferico(boolean entrada) {
+        this.entrada = entrada;
+        this.salida = false;
+        this.Nombre = "";
+        this.NoSerie = 0;
+        this.agregado = false;
+    }
+    public Periferico() {
+        this.entrada = false;
+        this.salida = false;
+        this.Nombre = "";
+        this.NoSerie = 0;
+        this.agregado = false;
+    }
+
+    public boolean isEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(boolean entrada) {
+        this.entrada = entrada;
+    }
+
+    public boolean isSalida() {
+        return salida;
+    }
+
+    public void setSalida(boolean salida) {
+        this.salida = salida;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getNoSerie() {
+        return NoSerie;
+    }
+
+    public void setNoSerie(int NoSerie) {
+        this.NoSerie = NoSerie;
+    }
+
+    public boolean isAgregado() {
+        return agregado;
+    }
+
+    public void setAgregado(boolean agregado) {
+        this.agregado = agregado;
+    }
+    
+
+    @Override
+    public String toString() {
+        return "\nPeriferico" + "\nEntrada: " + entrada + "\nSalida: " + salida + "\nNombre: " + Nombre +
+                "\nNoSerie: " + NoSerie ;
+    }
+    
+    
+    
+    
+}
